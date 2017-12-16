@@ -19,7 +19,7 @@ table
         td = support_request.content
         td = support_request.user
         td = support_request.status
-        td = support_request.category
+        td = support_request.request_category
         td = link_to 'Show', support_request
         td = link_to 'Edit', edit_support_request_path(support_request)
         td = link_to 'Destroy', support_request, data: { confirm: 'Are you sure?' }, method: :delete

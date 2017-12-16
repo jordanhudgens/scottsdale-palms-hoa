@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+  .container
+    = link_to 'Scottsdale Palms', root_path, class: 'navbar-brand'
+    button.navbar-toggler aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        li.nav-item.active
+          = link_to root_path, class: 'nav-link' do
+            = "<i class='fa fa-home' aria-hidden='true'></i> Home".html_safe
+        li.nav-item
+          a.nav-link href="#"  About
+        li.nav-item
+          a.nav-link href="#"  Services
+        li.nav-item
+          a.nav-link href="#"  Contact

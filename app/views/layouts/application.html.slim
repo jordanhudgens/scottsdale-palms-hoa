@@ -2,16 +2,18 @@ doctype html
 html
   head
     title
-      | AppTemplate
+      = @page_title || 'Scottsdale Palms | HOA Manager'
+
+    meta charset="utf-8"
+    meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    link href="https://fonts.googleapis.com/css?family=Lato|Roboto+Slab" rel="stylesheet"
+
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   body
-    .container
-      .row
-        .col-md-10
-          = nav_helper('div')
-        .col-md-2
-          = login_helper
+    = render 'shared_partials/nav'
+
+    .container.content-container
       = yield
       = alerts

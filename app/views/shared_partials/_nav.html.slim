@@ -5,13 +5,26 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
+
         li.nav-item class="#{active? root_path}"
           = link_to root_path, class: 'nav-link' do
             = "<i class='fa fa-home' aria-hidden='true'></i> Home".html_safe
-        li.nav-item class="#{active? newsletters_path}"
-          = link_to newsletters_path, class: 'nav-link' do
-            = "<i class='fa fa-newspaper-o' aria-hidden='true'></i> Newsletter".html_safe
-        li.nav-item class="#{active? root_path}"
-          a.nav-link href="#"  Services
-        li.nav-item class="#{active? root_path}"
-          a.nav-link href="#"  Contact
+
+        - if current_user
+          li.nav-item class="#{active? newsletters_path}"
+            = link_to newsletters_path, class: 'nav-link' do
+              = "<i class='fa fa-newspaper-o' aria-hidden='true'></i> Newsletter".html_safe
+
+          li.nav-item class="#{active? support_requests_path}"
+            = link_to support_requests_path, class: 'nav-link' do
+              = "<i class='fa fa-ticket' aria-hidden='true'></i> Support Requests".html_safe
+
+        - else
+
+          li.nav-item class="#{active? contact_us_path}"
+            = link_to contact_us_path, class: 'nav-link' do
+              = "<i class='fa fa-envelope-o' aria-hidden='true'></i> Contact Us".html_safe
+
+          li.nav-item class="#{active? new_user_session_path}"
+            = link_to new_user_session_path, class: 'nav-link' do
+              = "<i class='fa fa-user' aria-hidden='true'></i> Login".html_safe

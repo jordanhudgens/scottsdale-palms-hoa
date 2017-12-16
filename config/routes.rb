@@ -5,5 +5,6 @@ Rails.application.routes.draw do
 
   resources :newsletters
   devise_for :users
+  get 'contact-us', to: 'static#contact_us', as: 'contact_us'
   root to: 'static#home'
 end

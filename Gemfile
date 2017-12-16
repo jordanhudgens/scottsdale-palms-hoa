@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'rails', '~> 5.1.4'
+gem 'dotenv-rails', require: 'dotenv/rails-now'
 gem 'pg', '~> 0.18'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -30,7 +31,8 @@ end
 
 gem 'rspec-rails', '~> 3.7'
 gem 'rails-controller-testing'
-gem 'slim-rails', '~> 3.1'
+gem 'ckeditor', github: 'galetahub/ckeditor'
+gem 'slim-rails', '3.1.1'
 gem 'pundit', '~> 1.1'
 gem 'devise', '~> 4.3'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
@@ -41,3 +43,7 @@ gem 'kaminari', '~> 1.1'
 gem 'devcamp_view_tool', '~> 0.1.0'
 gem 'faker', '~> 1.8'
 gem 'popper_js'
+gem 'carrierwave', '~> 1.0'
+gem 'rmagick', '~> 2.16'
+gem 'mini_magick', '~> 4.6'
+gem 'carrierwave-aws', '~> 1.0', '>= 1.0.2'

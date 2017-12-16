@@ -1,0 +1,2 @@
+class SupportRequests::SupportRequestCommentsController < ApplicationController
+end

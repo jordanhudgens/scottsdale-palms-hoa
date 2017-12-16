@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171216191316) do
+ActiveRecord::Schema.define(version: 20171216191728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 20171216191316) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_newsletters_on_user_id"
+  end
+
+  create_table "support_request_comments", force: :cascade do |t|
+    t.bigint "support_request_id"
+    t.bigint "user_id"
+    t.text "comment"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["support_request_id"], name: "index_support_request_comments_on_support_request_id"
+    t.index ["user_id"], name: "index_support_request_comments_on_user_id"
   end
 
   create_table "support_requests", force: :cascade do |t|
@@ -55,5 +65,7 @@ ActiveRecord::Schema.define(version: 20171216191316) do
   end
 
   add_foreign_key "newsletters", "users"
+  add_foreign_key "support_request_comments", "support_requests"
+  add_foreign_key "support_request_comments", "users"
   add_foreign_key "support_requests", "users"
 end

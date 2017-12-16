@@ -6,8 +6,9 @@ class SupportRequest < ApplicationRecord
   validates_presence_of :title, :content
 
   enum status: {
-    unresolved: 0,
-    resolved:   1,
+    unresolved:  0,
+    in_progress: 1,
+    resolved:    2,
   }
 
   enum request_category: {

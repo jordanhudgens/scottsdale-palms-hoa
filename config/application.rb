@@ -16,5 +16,8 @@ module TestApp
   class Application < Rails::Application
     config.generators { |g| g.scaffold_stylesheet false }
     config.eager_load_paths << "#{Rails.root}/lib"
+    config.assets.precompile += Ckeditor.assets
+    config.assets.precompile += %w( ckeditor/* )
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
   end
 end

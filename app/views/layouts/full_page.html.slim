@@ -11,6 +11,7 @@ html
     = csrf_meta_tags
     = stylesheet_link_tag    'full_page', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag Ckeditor.cdn_url
   body
     .full-page-container
       = yield

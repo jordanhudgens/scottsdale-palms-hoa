@@ -15,5 +15,6 @@
 //= require turbolinks
 //= require_tree .
 //= require gritter
+//= require gritter-customizations
 //= require static
 //= require bootstrap-sprockets

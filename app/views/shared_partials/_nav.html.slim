@@ -19,6 +19,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
             = link_to support_requests_path, class: 'nav-link' do
               = "<i class='fa fa-ticket' aria-hidden='true'></i> Support Requests".html_safe
 
+          li.nav-item
+            = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
+              = "<i class='fa fa-sign-out' aria-hidden='true'></i> Sign Out".html_safe
+
         - else
 
           li.nav-item class="#{active? contact_us_path}"
@@ -28,3 +32,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
           li.nav-item class="#{active? new_user_session_path}"
             = link_to new_user_session_path, class: 'nav-link' do
               = "<i class='fa fa-user' aria-hidden='true'></i> Login".html_safe
+
+          li.nav-item class="#{active? new_user_registration_path}"
+            = link_to new_user_registration_path, class: 'nav-link' do
+              = "<i class='fa fa-user-plus' aria-hidden='true'></i> Apply for Access".html_safe

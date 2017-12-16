@@ -17,4 +17,6 @@
 //= require gritter
 //= require gritter-customizations
 //= require static
+//= require popper
+//= require popover_config
 //= require bootstrap-sprockets

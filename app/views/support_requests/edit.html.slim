@@ -1,8 +1,17 @@
-h1 Editing support_request
+.container
+  .headline-row-wrapper
+    .row
+      .col-md-6
+        .white-headline
+          h2
+            = link_to "<i class='fa fa-angle-left' aria-hidden='true'></i> Back".html_safe, @support_request
 
-== render 'form'
+      .col-md-6
+        .pull-right
+          .white-headline
+            h2
+              | Edit support request
 
-=> link_to 'Show', @support_request
-'|
-=< link_to 'Back', support_requests_path
-
+.form-card
+  .card
+    == render 'form'

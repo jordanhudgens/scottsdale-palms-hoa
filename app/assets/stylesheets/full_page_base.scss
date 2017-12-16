@@ -1,0 +1,41 @@
+html {
+  font-family: 'Roboto', sans-serif !important;
+}
+
+body {
+  background-color: $teal;
+}
+
+.full-page-container {
+}
+
+.form-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 100%;
+  min-height: 100vh;
+
+  .card {
+    padding: 42px;
+    width: 60%;
+    background-color: $bg-color !important;
+  }
+}
+
+.white-headline {
+  color: $bg-color !important;
+
+  a {
+    color: $bg-color !important;
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.headline-row-wrapper {
+  margin-top: 15px;
+}

@@ -6,9 +6,14 @@
         - @support_request.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
+  .row
+    .col-md-6
+      .text-field-element
+        = f.text_field :title, placeholder: 'Title'
+
+    .col-md-6
+      = f.select :request_category, request_category_array, { include_blank: false }, { class: 'form-control' }
+
   .field
     = f.label :content
     = cktext_area :support_request, :content, cols: 40

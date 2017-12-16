@@ -15,16 +15,5 @@
 .container
   .list-group-wrapper
     .list-group
-      a.list-group-item.list-group-item-action.flex-column.align-items-start href="#" 
-        .d-flex.w-100.justify-content-between
-          h5.mb-1 List group item heading
-          small.text-muted 3 days ago
-        p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        small.text-muted Donec id elit non mi porta.
-      a.list-group-item.list-group-item-action.flex-column.align-items-start href="#" 
-        .d-flex.w-100.justify-content-between
-          h5.mb-1 List group item heading
-          small.text-muted 3 days ago
-        p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
-        small.text-muted Donec id elit non mi porta.
-
+      = render @support_requests
+    = paginate @support_requests

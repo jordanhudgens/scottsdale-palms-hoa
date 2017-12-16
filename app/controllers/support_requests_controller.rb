@@ -4,7 +4,7 @@ class SupportRequestsController < ApplicationController
   layout 'full_page'
 
   def index
-    @support_requests = SupportRequest.all
+    @support_requests = SupportRequest.page(params[:page]).per(10)
   end
 
   def show

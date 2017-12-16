@@ -52,3 +52,17 @@ body {
 .list-group-wrapper {
   margin-top: 42px;
 }
+
+.pagination {
+  margin-top: 21px;
+
+  .page-item.active .page-link {
+    background-color: $dark-teal !important;
+    border-color: $dark-teal !important;
+  }
+
+  .page-link {
+    color: $teal !important;
+  }
+}
+

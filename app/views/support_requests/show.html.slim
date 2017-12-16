@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @support_request.title
+p
+  strong Content:
+  = @support_request.content
+p
+  strong User:
+  = @support_request.user
+p
+  strong Status:
+  = @support_request.status
+p
+  strong Category:
+  = @support_request.category
+
+=> link_to 'Edit', edit_support_request_path(@support_request)
+'|
+=< link_to 'Back', support_requests_path

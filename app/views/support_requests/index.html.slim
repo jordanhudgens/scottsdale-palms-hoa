@@ -1,0 +1,29 @@
+h1 Listing support_requests
+
+table
+  thead
+    tr
+      th Title
+      th Content
+      th User
+      th Status
+      th Category
+      th
+      th
+      th
+
+  tbody
+    - @support_requests.each do |support_request|
+      tr
+        td = support_request.title
+        td = support_request.content
+        td = support_request.user
+        td = support_request.status
+        td = support_request.category
+        td = link_to 'Show', support_request
+        td = link_to 'Edit', edit_support_request_path(support_request)
+        td = link_to 'Destroy', support_request, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Support request', new_support_request_path

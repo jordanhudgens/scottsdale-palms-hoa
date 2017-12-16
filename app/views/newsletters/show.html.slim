@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @newsletter.title
+p
+  strong Content:
+  = @newsletter.content
+p
+  strong Newsletter file:
+  = @newsletter.newsletter_file
+p
+  strong User:
+  = @newsletter.user
+
+=> link_to 'Edit', edit_newsletter_path(@newsletter)
+'|
+=< link_to 'Back', newsletters_path

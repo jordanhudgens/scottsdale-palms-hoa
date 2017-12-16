@@ -1,0 +1,21 @@
+= form_for @newsletter do |f|
+  - if @newsletter.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@newsletter.errors.count, "error")} prohibited this newsletter from being saved:"
+      ul
+        - @newsletter.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :content
+    = f.text_area :content
+  .field
+    = f.label :newsletter_file
+    = f.text_area :newsletter_file
+  .field
+    = f.label :user
+    = f.text_field :user
+  .actions = f.submit

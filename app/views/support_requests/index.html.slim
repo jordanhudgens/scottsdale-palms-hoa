@@ -1,29 +1,30 @@
-h1 Listing support_requests
+.container
+  .headline-row-wrapper
+    .row
+      .col-md-6
+        .white-headline
+          h2
+            = link_to "<i class='fa fa-angle-left' aria-hidden='true'></i> Back".html_safe, root_path
 
-table
-  thead
-    tr
-      th Title
-      th Content
-      th User
-      th Status
-      th Category
-      th
-      th
-      th
+      .col-md-6
+        .pull-right
+          .white-headline
+            h2
+              | Request list
 
-  tbody
-    - @support_requests.each do |support_request|
-      tr
-        td = support_request.title
-        td = support_request.content
-        td = support_request.user
-        td = support_request.status
-        td = support_request.request_category
-        td = link_to 'Show', support_request
-        td = link_to 'Edit', edit_support_request_path(support_request)
-        td = link_to 'Destroy', support_request, data: { confirm: 'Are you sure?' }, method: :delete
+.container
+  .list-group-wrapper
+    .list-group
+      a.list-group-item.list-group-item-action.flex-column.align-items-start href="#" 
+        .d-flex.w-100.justify-content-between
+          h5.mb-1 List group item heading
+          small.text-muted 3 days ago
+        p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+        small.text-muted Donec id elit non mi porta.
+      a.list-group-item.list-group-item-action.flex-column.align-items-start href="#" 
+        .d-flex.w-100.justify-content-between
+          h5.mb-1 List group item heading
+          small.text-muted 3 days ago
+        p.mb-1 Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.
+        small.text-muted Donec id elit non mi porta.
 
-br
-
-= link_to 'New Support request', new_support_request_path

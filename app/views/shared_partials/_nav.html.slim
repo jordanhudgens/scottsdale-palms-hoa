@@ -5,12 +5,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
       span.navbar-toggler-icon
     #navbarResponsive.collapse.navbar-collapse
       ul.navbar-nav.ml-auto
-        li.nav-item.active
+        li.nav-item class="#{active? root_path}"
           = link_to root_path, class: 'nav-link' do
             = "<i class='fa fa-home' aria-hidden='true'></i> Home".html_safe
-        li.nav-item
-          a.nav-link href="#"  About
-        li.nav-item
+        li.nav-item class="#{active? newsletters_path}"
+          = link_to newsletters_path, class: 'nav-link' do
+            = "<i class='fa fa-newspaper-o' aria-hidden='true'></i> Newsletter".html_safe
+        li.nav-item class="#{active? root_path}"
           a.nav-link href="#"  Services
-        li.nav-item
+        li.nav-item class="#{active? root_path}"
           a.nav-link href="#"  Contact

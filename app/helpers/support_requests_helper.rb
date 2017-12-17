@@ -16,4 +16,12 @@ module SupportRequestsHelper
       "<span class='badge badge-primary'>Resolved</span>".html_safe
     end
   end
+
+  def image_render_engine(support_request)
+    if support_request.request_image.blank?
+      image_tag('thumb-default.jpg')
+    else
+      image_tag(support_request.request_image.url)
+    end
+  end
 end

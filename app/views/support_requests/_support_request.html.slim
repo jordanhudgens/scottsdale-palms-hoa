@@ -2,8 +2,12 @@
   .d-flex.w-100.justify-content-between
     h5.mb-1
       = support_request.title
-  p.mb-1
-    = truncate(strip_tags(support_request.content), length: 350) { " <span class='read-more-link'>(continue) <i class='fa fa-external-link' aria-hidden='true'></i></span>".html_safe }
+  .support-list-content-wrapper
+    .d-flex.w-100.justify-content-between
+      .support-thumb-wrapper
+        = image_render_engine(support_request)
+      p.mb-1
+        = truncate(strip_tags(support_request.content), length: 350) { " <span class='read-more-link'>(continue) <i class='fa fa-external-link' aria-hidden='true'></i></span>".html_safe }
   .d-flex.w-100.justify-content-between
     small.text-muted
       = status_badge(support_request)

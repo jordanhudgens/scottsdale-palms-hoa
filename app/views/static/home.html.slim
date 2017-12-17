@@ -6,3 +6,13 @@
 
       h2
         = "It's currently #{@temperature}&deg; in Scottsdale, AZ".html_safe
+
+- else
+
+  .homepage-wrapper
+    .text-center
+      h2
+        = "It's currently #{@temperature}&deg; in Scottsdale, AZ".html_safe
+
+      .login-btn-div
+        = link_to "Login", new_user_session_path, class: 'btn btn-palms btn-homepage'

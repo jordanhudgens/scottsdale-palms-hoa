@@ -29,3 +29,13 @@ body {
     font-size: 3.25em;
   }
 }
+
+.login-btn-div {
+  .btn-homepage {
+    height: auto !important;
+    
+    &:hover {
+      color: #fff !important;
+    }
+  }
+}

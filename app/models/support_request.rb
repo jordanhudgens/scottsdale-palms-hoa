@@ -7,6 +7,10 @@ class SupportRequest < ApplicationRecord
 
   mount_uploader :request_image, ImageUploader
 
+  def self.by_latest
+    order('updated_at DESC')
+  end
+
   enum status: {
     unresolved:  0,
     in_progress: 1,

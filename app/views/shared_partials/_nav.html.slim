@@ -19,6 +19,10 @@ nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
             = link_to support_requests_path, class: 'nav-link' do
               = "<i class='fa fa-ticket' aria-hidden='true'></i> Support Requests".html_safe
 
+          li.nav-item class="#{active? edit_user_registration_path}"
+            = link_to edit_user_registration_path, class: 'nav-link' do
+              = "<i class='fa fa-user-circle-o' aria-hidden='true'></i> Edit Account".html_safe
+
           li.nav-item
             = link_to destroy_user_session_path, method: :delete, class: 'nav-link' do
               = "<i class='fa fa-sign-out' aria-hidden='true'></i> Sign Out".html_safe

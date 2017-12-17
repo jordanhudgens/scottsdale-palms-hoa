@@ -42,3 +42,18 @@
 .auth-links a {
   color: $teal;
 }
+
+.edit-auth {
+  margin-top: -142px;
+}
+
+.well {
+  padding: 21px;
+  background-color: $teal;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-radius: 7px;
+  h4 {
+    color: #fff !important;
+  }
+}

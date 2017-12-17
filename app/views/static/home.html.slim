@@ -1,2 +1,8 @@
-h1
-  | Homepage
+- if current_user
+  .homepage-wrapper
+    .text-center
+      h1
+        = "Hi <b>#{current_user.full_name}</b>".html_safe
+
+      h2
+        = "It's currently #{@temperature} degrees in Scottsdale, AZ"

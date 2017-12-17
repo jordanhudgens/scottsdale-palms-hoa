@@ -8,13 +8,18 @@
 
   .row
     .col-md-6
-      .text-field-element
+      .palms-form-border
         = f.text_field :title, placeholder: 'Title'
 
     .col-md-6
-      = f.select :request_category, request_category_array, { include_blank: false }, { class: 'form-control' }
+      .palms-form-border
+        = f.select :request_category, request_category_array, { include_blank: false }, { class: 'form-control' }
 
-  .field
-    = f.label :content
-    = cktext_area :support_request, :content, cols: 40
-  .actions = f.submit
+  .row
+    .col-md-12
+      = f.text_area :content, cols: 40, placeholder: 'Content', class: 'form-control'
+
+  .row
+    .col-md-12
+      .submit-wrapper
+        = f.submit 'Submit', class: 'btn btn-palms'

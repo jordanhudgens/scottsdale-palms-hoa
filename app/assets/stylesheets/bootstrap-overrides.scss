@@ -6,3 +6,17 @@
   border-bottom: $teal-border 1px solid;
   margin-bottom: 21px;
 }
+
+.btn-palms {
+  background-color: $teal !important;
+  color: $white;
+  font-size: .9em;
+  height: 42px;
+  width: 160px;
+  border-radius: 42px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: $dark-teal !important;
+  }
+}

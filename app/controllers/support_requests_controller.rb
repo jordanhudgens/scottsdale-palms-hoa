@@ -63,6 +63,7 @@ class SupportRequestsController < ApplicationController
         :content,
         :status,
         :request_category,
+        :request_image,
       )
     end
 end

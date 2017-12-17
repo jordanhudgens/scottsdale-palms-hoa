@@ -21,7 +21,10 @@
 
   .row
     .col-md-12
-      = f.text_area :content, rows: 10, placeholder: 'Content', class: 'form-control'
+      label.label-with-top-margin.file-upload-component
+        = "<i class='fa fa-camera' aria-hidden='true'></i> Upload Image".html_safe
+        .file-upload-btn-wrapper
+          = f.file_field :request_image
 
   .row
     .col-md-12

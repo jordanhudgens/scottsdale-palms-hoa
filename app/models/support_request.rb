@@ -5,6 +5,8 @@ class SupportRequest < ApplicationRecord
 
   validates_presence_of :title, :content
 
+  mount_uploader :request_image, ImageUploader
+
   enum status: {
     unresolved:  0,
     in_progress: 1,

@@ -10,10 +10,14 @@
         .pull-right
           .white-headline
             h2
-              | Request list
+              = link_to "Add New Request <i class='fa fa-plus-circle' aria-hidden='true'></i>".html_safe, new_support_request_path
 
 .container
   .list-group-wrapper
+    .white-headline
+      h2
+        | Request list
+
     .list-group
       = render @support_requests
     = paginate @support_requests

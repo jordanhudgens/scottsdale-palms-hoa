@@ -1,21 +1,33 @@
-p#notice = notice
+.container
+  .headline-row-wrapper
+    .row
+      .col-md-6
+        .white-headline
+          h2
+            = link_to "<i class='fa fa-angle-left' aria-hidden='true'></i> View All".html_safe, support_requests_path
 
-p
-  strong Title:
-  = @support_request.title
-p
-  strong Content:
-  = @support_request.content
-p
-  strong User:
-  = @support_request.user
-p
-  strong Status:
-  = @support_request.status
-p
-  strong Request Category:
-  = @support_request.request_category
+      .col-md-6
+        - if policy(@support_request).edit?
+          .pull-right
+            .white-headline
+              h2
+                = link_to "Edit Request <i class='fa fa-pencil' aria-hidden='true'></i>".html_safe, new_support_request_path
 
-=> link_to 'Edit', edit_support_request_path(@support_request)
-'|
-=< link_to 'Back', support_requests_path
+
+    .support-request-show-wrapper
+      .card
+        .row
+          .col-md-12
+            h2.text-muted
+              = @support_request.title
+
+          .col-md-12.text-muted
+            = "Submitted by: #{@support_request.user.full_name}"
+
+          .col-md-12
+            small.text-muted
+              = "Posted #{distance_of_time_in_words(@support_request.created_at, Time.now)} ago"
+
+          .col-md-12
+            = @support_request.content
+

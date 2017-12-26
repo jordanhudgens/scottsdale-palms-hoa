@@ -24,10 +24,8 @@ class SupportRequestsController < ApplicationController
     respond_to do |format|
       if @support_request.save
         format.html { redirect_to @support_request, notice: 'Support request was successfully created.' }
-        format.json { render :show, status: :created, location: @support_request }
       else
         format.html { render :new }
-        format.json { render json: @support_request.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -36,10 +34,8 @@ class SupportRequestsController < ApplicationController
     respond_to do |format|
       if @support_request.update(support_request_params)
         format.html { redirect_to @support_request, notice: 'Support request was successfully updated.' }
-        format.json { render :show, status: :ok, location: @support_request }
       else
         format.html { render :edit }
-        format.json { render json: @support_request.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,7 +44,6 @@ class SupportRequestsController < ApplicationController
     @support_request.destroy
     respond_to do |format|
       format.html { redirect_to support_requests_url, notice: 'Support request was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

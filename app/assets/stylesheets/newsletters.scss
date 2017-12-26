@@ -3,24 +3,34 @@
   margin-bottom: 21px;
 }
 
-.newsletter-card-block {
-  padding: 21px !important;
+.newsletter-card-wrapper {
+  margin-top: 20px;
+  margin-bottom: 20px;
 
-  a {
-    color: black !important;
+  .newsletter-card-block {
+    padding: 21px !important;
 
-    &:hover {
-      text-decoration: none !important;
+    a {
+      color: black !important;
+
+      &:hover {
+        text-decoration: none !important;
+      }
+    }
+
+    .btn {
+      padding-top: 10px !important;
+      color: white !important;
+      margin-top: 10px !important;
+
+      &:hover {
+        color: white !important;
+      }
     }
   }
 
-  .btn {
-    padding-top: 10px !important;
-    color: white !important;
-    margin-top: 10px !important;
-
-    &:hover {
-      color: white !important;
-    }
+  .card-img-top {
+    min-height: 215px !important;
+    max-height: 215px !important;
   }
 }

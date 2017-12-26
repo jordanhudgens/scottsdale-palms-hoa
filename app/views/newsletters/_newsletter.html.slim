@@ -1,11 +1,16 @@
 = link_to newsletter do
-  .card style=("width: 20rem;") 
-    img.card-img-top alt=("Card image cap") src="http://via.placeholder.com/318x180"
-    .newsletter-card-block
-      h4.card-title
-        = newsletter.title
-      p.card-text
-        = truncate(strip_tags(newsletter.content), length: 142)
-      .submit-wrapper.text-center
-        = link_to 'Full Newsletter', newsletter, class: 'btn btn-palms'
+  .newsletter-card-wrapper
+    .col-md-4
+      .card style=("width: 20rem;")
+        - if newsletter.featured_image.blank?
+          img.card-img-top src="#{image_url('sign-thumb.jpg')}"
+        - else
+          img.card-img-top src="#{newsletter.featured_image}"
+        .newsletter-card-block
+          h4.card-title
+            = newsletter.title
+          p.card-text
+            = truncate(strip_tags(newsletter.content), length: 142)
+          .submit-wrapper.text-center
+            = link_to 'Full Newsletter', newsletter, class: 'btn btn-palms'
 

@@ -14,5 +14,8 @@
     = f.text_area :content
   .field
     = f.label :newsletter_file
-    = f.text_area :newsletter_file
+    = f.file_field :newsletter_file
+  .field
+    = f.label :featured_image
+    = f.file_field :featured_image
   .actions = f.submit

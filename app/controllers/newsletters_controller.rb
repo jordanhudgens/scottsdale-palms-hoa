@@ -57,6 +57,7 @@ class NewslettersController < ApplicationController
         :title,
         :content,
         :newsletter_file,
+        :featured_image,
         :user_id
       )
     end

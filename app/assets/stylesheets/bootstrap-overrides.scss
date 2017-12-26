@@ -31,3 +31,12 @@
 .label-with-top-margin {
   margin-top: 21px !important;
 }
+
+.teal-link {
+  color: $teal !important;
+
+  &:hover {
+    color: $dark-teal !important;
+    text-decoration: none;
+  }
+}

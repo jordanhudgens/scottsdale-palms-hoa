@@ -3,7 +3,7 @@ class NewslettersController < ApplicationController
   before_action :set_newsletter, only: [:show, :edit, :update, :destroy]
 
   def index
-    @newsletters = Newsletter.all
+    @newsletters = Newsletter.by_latest.page(params[:page]).per(3)
   end
 
   def show

@@ -45,4 +45,41 @@
       color: white !important;
     }
   }
+
+  .edit-btn {
+    margin-bottom: 30px;
+  }
+}
+
+.newsletter-form-wrapper {
+  .card {
+    padding: 21px;
+  }
+
+  .newsletter-featured-image img {
+    width: 100%;
+  }
+
+  .newsletter-content {
+    margin-top: 21px;
+    margin-bottom: 21px;
+  }
+
+  .newsletter-timestamp {
+    margin-bottom: 15px !important;
+  }
+}
+
+
+.pagination {
+  margin-top: 21px;
+
+  .page-item.active .page-link {
+    background-color: $dark-teal !important;
+    border-color: $dark-teal !important;
+  }
+
+  .page-link {
+    color: $teal !important;
+  }
 }

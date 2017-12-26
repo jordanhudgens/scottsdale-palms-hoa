@@ -6,16 +6,24 @@
         - @newsletter.errors.full_messages.each do |message|
           li = message
 
-  .field
-    = f.label :title
-    = f.text_field :title
-  .field
-    = f.label :content
-    = f.text_area :content
-  .field
-    = f.label :newsletter_file
+  .form-group
+    = f.label :title, class: 'form-label'
+    = f.text_field :title, class: 'form-control'
+
+  .form-group
+    = f.label :content, class: 'form-label'
+    = cktext_area :newsletter, :content, cols: 40
+
+  .form-group
+    = f.label :newsletter_file, class: 'form-label'
+    br
     = f.file_field :newsletter_file
-  .field
-    = f.label :featured_image
+
+  .form-group
+    = f.label :featured_image, class: 'form-label'
+    br
     = f.file_field :featured_image
-  .actions = f.submit
+
+  .text-center
+    .submit-wrapper
+      = f.submit 'Publish', class: 'btn btn-palms'

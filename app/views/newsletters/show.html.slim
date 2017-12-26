@@ -1,18 +1,30 @@
-p#notice = notice
+.newsletter-wrapper
+  - if policy(@newsletter).edit?
+    .row
+      .col-md-12
+        = link_to 'Edit Newsletter', edit_newsletter_path(@newsletter), class: 'btn btn-palms edit-btn'
 
-p
-  strong Title:
-  = @newsletter.title
-p
-  strong Content:
-  = @newsletter.content
-p
-  strong Newsletter file:
-  = @newsletter.newsletter_file
-p
-  strong User:
-  = @newsletter.user
+  .row
+    .col-md-12
+      .newsletter-form-wrapper
+        .card
+          .row
+            .col-md-9
+              h2.text-muted
+                = @newsletter.title
+              .newsletter-timestamp
+                small.text-muted
+                  = "Published #{distance_of_time_in_words(@newsletter.created_at, Time.now)} ago"
 
-=> link_to 'Edit', edit_newsletter_path(@newsletter)
-'|
-=< link_to 'Back', newsletters_path
+            - if !@newsletter.newsletter_file.blank?
+              .col-md-3
+                .pull-right
+                  = link_to "Download Newsletter <i class='fa fa-cloud-download' aria-hidden='true'></i>".html_safe, @newsletter.newsletter_file.url, class: 'teal-link'
+
+
+          - if !@newsletter.featured_image.blank?
+            .newsletter-featured-image
+              = image_tag(@newsletter.featured_image)
+
+          .newsletter-content
+            = @newsletter.content.html_safe

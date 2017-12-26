@@ -1,8 +1,10 @@
-h1 Editing newsletter
+.newsletter-form-wrapper
+  .card
+    h2.text-muted
+      | Edit newsletter
 
-== render 'form'
+    == render 'form'
 
-=> link_to 'Show', @newsletter
-'|
-=< link_to 'Back', newsletters_path
+    .text-center
+      = link_to 'Back', newsletters_path, class: 'teal-link'
 

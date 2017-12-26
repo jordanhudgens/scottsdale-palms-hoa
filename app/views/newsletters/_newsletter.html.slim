@@ -1,0 +1,11 @@
+= link_to newsletter do
+  .card style=("width: 20rem;") 
+    img.card-img-top alt=("Card image cap") src="http://via.placeholder.com/318x180"
+    .newsletter-card-block
+      h4.card-title
+        = newsletter.title
+      p.card-text
+        = truncate(strip_tags(newsletter.content), length: 142)
+      .submit-wrapper.text-center
+        = link_to 'Full Newsletter', newsletter, class: 'btn btn-palms'
+

@@ -1,27 +1,5 @@
-h1 Listing newsletters
+h1.newsletter-headline
+  | Newsletters
 
-table
-  thead
-    tr
-      th Title
-      th Content
-      th Newsletter file
-      th User
-      th
-      th
-      th
+= render @newsletters
 
-  tbody
-    - @newsletters.each do |newsletter|
-      tr
-        td = newsletter.title
-        td = newsletter.content
-        td = newsletter.newsletter_file
-        td = newsletter.user
-        td = link_to 'Show', newsletter
-        td = link_to 'Edit', edit_newsletter_path(newsletter)
-        td = link_to 'Destroy', newsletter, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-= link_to 'New Newsletter', new_newsletter_path

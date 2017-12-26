@@ -18,15 +18,19 @@
       .card
         .row
           .col-md-12
-            h2.text-muted
-              = @support_request.title
+            .row
+              .col-md-9
+                h2.text-muted
+                  = @support_request.title
 
-          .col-md-12.text-muted
-            = "Submitted by: #{@support_request.user.full_name}"
-
-          .col-md-12
-            small.text-muted
-              = "Posted #{distance_of_time_in_words(@support_request.created_at, Time.now)} ago"
+              .col-md-3
+                .pull-right.text-align-right
+                  .text-muted
+                    = "Submitted by: #{@support_request.user.full_name}"
+                  = status_badge(@support_request)
+                  br
+                  small.text-muted
+                    = "Posted #{distance_of_time_in_words(@support_request.created_at, Time.now)} ago"
 
           - if !@support_request.request_image.blank?
             .col-md-12.support-request-img-wrapper

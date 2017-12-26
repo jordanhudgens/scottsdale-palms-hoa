@@ -11,14 +11,17 @@ class NewslettersController < ApplicationController
 
   def new
     @newsletter = Newsletter.new
+    authorize @newsletter
   end
 
   def edit
+    authorize @newsletter
   end
 
   def create
     @newsletter = Newsletter.new(newsletter_params)
     @newsletter.user = current_user
+    authorize @newsletter
 
     respond_to do |format|
       if @newsletter.save
@@ -30,6 +33,7 @@ class NewslettersController < ApplicationController
   end
 
   def update
+    authorize @newsletter
     respond_to do |format|
       if @newsletter.update(newsletter_params)
         format.html { redirect_to @newsletter, notice: 'Newsletter was successfully updated.' }
@@ -40,9 +44,10 @@ class NewslettersController < ApplicationController
   end
 
   def destroy
+    authorize @newsletter
     @newsletter.destroy
     respond_to do |format|
-      format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully destroyed.' }
+      format.html { redirect_to newsletters_url, notice: 'Newsletter was successfully deleted.' }
       format.json { head :no_content }
     end
   end

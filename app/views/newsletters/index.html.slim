@@ -1,6 +1,9 @@
-h1.newsletter-headline
-  | Newsletters
+.newsletter-wrapper
+  - if policy(@newsletters).new?
+    .row
+      .col-md-12
+        = link_to 'New Newsletter', new_newsletter_path, class: 'btn btn-palms'
 
-.row
-  = render @newsletters
+  .row
+    = render @newsletters
 

@@ -34,3 +34,15 @@
     max-height: 215px !important;
   }
 }
+
+.newsletter-wrapper {
+  .btn {
+    padding-top: 10px !important;
+    color: white !important;
+    margin-top: 10px !important;
+
+    &:hover {
+      color: white !important;
+    }
+  }
+}

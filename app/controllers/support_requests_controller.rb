@@ -4,10 +4,15 @@ class SupportRequestsController < ApplicationController
   layout 'full_page'
 
   def index
-    @support_requests = SupportRequest.by_latest.page(params[:page]).per(10)
+    if current_user.admin?
+      @support_requests = SupportRequest.by_latest.page(params[:page]).per(10)
+    else
+      @support_requests = current_user.support_requests.by_latest.page(params[:page]).per(10)
+    end
   end
 
   def show
+    authorize @support_request
   end
 
   def new

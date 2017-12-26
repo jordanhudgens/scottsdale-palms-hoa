@@ -10,4 +10,8 @@ class SupportRequestPolicy < ApplicationPolicy
   def destroy?
     edit?
   end
+
+  def show?
+    edit?
+  end
 end

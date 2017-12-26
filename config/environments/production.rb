@@ -88,4 +88,14 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+  config.action_mailer.default_url_options = { :host => 'www.scottsdalepalms.com' }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address              => ENV.fetch('SPARKPOST_HOST'),
+    :port                 => ENV.fetch('SPARKPOST_PORT'),
+    :domain               => 'www.scottsdalepalms.com',
+    :user_name            => ENV.fetch('SPARKPOST_USERNAME'),
+    :password             => ENV.fetch('SPARKPOST_PW'),
+    :authentication       => 'plain'
+  }
 end

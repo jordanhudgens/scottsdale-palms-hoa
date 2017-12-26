@@ -28,6 +28,10 @@
             small.text-muted
               = "Posted #{distance_of_time_in_words(@support_request.created_at, Time.now)} ago"
 
+          - if !@support_request.request_image.blank?
+            .col-md-12.support-request-img-wrapper
+              = image_tag(@support_request.request_image.url, width: '100%')
+
           .col-md-12
             = @support_request.content
 

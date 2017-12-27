@@ -7,6 +7,14 @@ module SupportRequestsHelper
     end
   end
 
+  def request_status_array
+    request_status_keys = SupportRequest.statuses.keys
+
+    request_status_keys.each_with_object([]) do |k, arr|
+      arr << [k.gsub('_', ' ').titleize, k]
+    end
+  end
+
   def status_badge(support_request)
     if support_request.unresolved?
       "<span class='badge badge-danger'>Unresolved</span>".html_safe

@@ -1,0 +1,2 @@
+class BoardMailer < ApplicationMailer
+end

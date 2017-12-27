@@ -28,6 +28,7 @@ class SupportRequestsController < ApplicationController
 
     respond_to do |format|
       if @support_request.save
+        BoardMailer.notification_email(@support_request).deliver_now
         format.html { redirect_to @support_request, notice: 'Support request was successfully created.' }
       else
         format.html { render :new }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>A new request has been submitted by <%= @support_request.user.full_name %></h2>
+
+    <h4>
+      <%= @support_request.title %>
+    </h4>
+
+    <p>
+      <b>
+        <%= @support_request.request_category %>
+      </b>
+    </p>
+
+    <p>
+      <%= @support_request.content %>
+    </p>
+    <p>
+      View support request: <%= support_request_url(@support_request) %>
+    </p>
+    <p>From the Scottsdale Palms Robot.</p>
+  </body>
+</html>

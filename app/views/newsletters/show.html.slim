@@ -2,7 +2,8 @@
   - if policy(@newsletter).edit?
     .row
       .col-md-12
-        = link_to 'Edit Newsletter', edit_newsletter_path(@newsletter), class: 'btn btn-palms edit-btn'
+        = link_to 'Edit Newsletter', edit_newsletter_path(@newsletter), class: 'btn btn-palms edit-btn btn-right-margin'
+        = link_to 'Delete Newsletter', newsletter_path(@newsletter), method: :delete, class: 'btn btn-palms edit-btn', data: { confirm: 'Are you sure you want to delete this newsletter, this cannot be undone.' }
 
   .row
     .col-md-12
